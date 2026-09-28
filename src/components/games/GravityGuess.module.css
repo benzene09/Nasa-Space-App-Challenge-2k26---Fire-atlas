@@ -1,0 +1,142 @@
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  gap: var(--space-6);
+}
+.brief {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.mission {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.mission .mono {
+  color: #ffc53d;
+}
+.q {
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+.q span {
+  color: var(--flame-2);
+}
+.help {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+.flames {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 12px;
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 100%, rgba(255, 106, 43, 0.12), transparent 70%), var(--surface-solid);
+  border: 1px solid var(--border);
+}
+.flames figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flames figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+.mystery figcaption {
+  color: var(--violet);
+}
+.sliderLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.sliderLabel .mono {
+  color: var(--flame-2);
+  font-size: 1rem;
+}
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  border-radius: 14px;
+  border: 0;
+  font-weight: 700;
+  color: #1a0d05;
+  background: linear-gradient(135deg, var(--flame-2), var(--flame));
+}
+.submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.submit:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--surface-solid);
+  border: 1px solid rgba(255, 197, 61, 0.35);
+  text-align: center;
+}
+.result p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.result strong {
+  color: var(--text);
+}
+.result .submit {
+  width: 100%;
+}
+.chart {
+  min-width: 0;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding-left: 44px;
+}
+.legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 6px;
+}
+.dotY {
+  background: #ffb23f;
+}
+.dotO {
+  background: #ff6a2b;
+}
+.dotC {
+  background: #3fd4ff;
+}
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+  .chart {
+    height: 320px;
+  }
+}

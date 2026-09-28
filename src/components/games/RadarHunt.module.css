@@ -1,0 +1,231 @@
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 320px);
+  gap: var(--space-6);
+}
+.status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  margin-bottom: var(--space-3);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.status span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.status strong {
+  color: var(--cyan);
+  font-size: 1rem;
+}
+.mission {
+  margin-left: auto;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--violet-soft);
+  color: #d8ccff;
+  font-size: 0.75rem;
+}
+.radar {
+  position: relative;
+  padding: 16px 16px 8px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, rgba(52, 211, 153, 0.08), transparent 70%), #050a10;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+.sweep {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 180%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: conic-gradient(from 0deg, rgba(52, 211, 153, 0.22), transparent 18%);
+  animation: sweep 3.2s linear infinite;
+  pointer-events: none;
+}
+@keyframes sweep {
+  to {
+    rotate: 360deg;
+  }
+}
+.grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 34px repeat(11, minmax(0, 1fr));
+  gap: 4px;
+}
+.y,
+.x {
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+}
+.x {
+  justify-content: center;
+}
+.cell {
+  aspect-ratio: 1.25;
+  min-height: 28px;
+  border: 0;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  color: rgba(0, 0, 0, 0.55);
+  transform-style: preserve-3d;
+  transition:
+    filter 0.15s,
+    transform 0.15s;
+}
+.cell:not(:disabled):hover {
+  filter: brightness(1.5);
+  outline: 2px solid rgba(52, 211, 153, 0.7);
+}
+.fog {
+  background: repeating-linear-gradient(135deg, rgba(52, 211, 153, 0.12) 0 3px, rgba(52, 211, 153, 0.05) 3px 6px);
+  border: 1px solid rgba(52, 211, 153, 0.18);
+}
+.hot {
+  background: linear-gradient(135deg, #ffb23f, #ff6a2b);
+}
+.cool {
+  background: linear-gradient(135deg, #b59dff, #7a5cff);
+  color: #fff;
+  box-shadow: 0 0 14px rgba(167, 139, 250, 0.7);
+}
+.extinct {
+  background: #243049;
+  color: var(--text-dim);
+}
+.ghost {
+  opacity: 0.35;
+}
+.axis {
+  margin-top: 6px;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.h {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+}
+.h svg {
+  color: var(--risk-low);
+}
+.brief,
+.tip {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.brief strong {
+  color: var(--violet);
+}
+.tip {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface-solid);
+  border-left: 3px solid var(--violet);
+}
+.last {
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+}
+.last_cool {
+  border-color: var(--violet);
+  color: #e3dbff;
+}
+.end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+  background: var(--surface-solid);
+  border: 1px solid rgba(255, 197, 61, 0.35);
+}
+.end p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.end button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 18px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 0;
+  font-weight: 700;
+  color: #1a0d05;
+  background: linear-gradient(135deg, var(--flame-2), var(--flame));
+}
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.legend i {
+  width: 16px;
+  height: 12px;
+  border-radius: 3px;
+}
+@media (max-width: 960px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 520px) {
+  .row {
+    grid-template-columns: 26px repeat(11, minmax(0, 1fr));
+    gap: 2px;
+  }
+  .cell {
+    min-height: 20px;
+    border-radius: 3px;
+  }
+  .cell svg {
+    width: 10px;
+  }
+  .radar {
+    padding: 10px 8px 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sweep {
+    animation: none;
+  }
+}

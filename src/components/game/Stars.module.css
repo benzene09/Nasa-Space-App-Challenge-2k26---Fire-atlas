@@ -1,0 +1,11 @@
+.stars {
+  display: inline-flex;
+  gap: 4px;
+}
+.on {
+  color: #ffc53d;
+  filter: drop-shadow(0 0 10px rgba(255, 197, 61, 0.6));
+}
+.off {
+  color: var(--surface-3);
+}

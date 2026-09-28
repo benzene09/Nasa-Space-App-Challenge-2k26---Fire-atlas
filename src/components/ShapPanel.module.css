@@ -1,0 +1,77 @@
+.panel {
+  padding: var(--space-5);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, rgba(255, 106, 43, 0.07), transparent 50%), var(--surface-solid);
+  border: 1px solid var(--border);
+  position: sticky;
+  top: 96px;
+  overflow: hidden;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--flame-2);
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+}
+.head h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.chart {
+  height: 200px;
+  margin-top: var(--space-4);
+}
+.legend {
+  display: flex;
+  gap: var(--space-4);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+.up {
+  background: var(--flame);
+}
+.down {
+  background: var(--cyan);
+}
+.summary {
+  margin-top: var(--space-4);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.summary strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.source {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+@media (max-width: 1100px) {
+  .panel {
+    position: static;
+  }
+}

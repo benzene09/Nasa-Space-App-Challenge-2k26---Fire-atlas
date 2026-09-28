@@ -1,0 +1,46 @@
+.tabs {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+}
+.tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.tab > *:not(.pill) {
+  position: relative;
+  z-index: 1;
+}
+.on {
+  color: #1a0d05;
+}
+.pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--flame-2), var(--flame));
+}
+.xp {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(63, 212, 255, 0.18);
+  color: var(--cyan);
+}
+.on .xp {
+  background: rgba(26, 13, 5, 0.18);
+  color: #1a0d05;
+}

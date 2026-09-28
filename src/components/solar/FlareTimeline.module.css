@@ -1,0 +1,68 @@
+.wrap {
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  font-size: 0.75rem;
+}
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+.sep {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #8ff0ff;
+}
+.chart {
+  height: 170px;
+  margin-top: 8px;
+}
+.empty {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--text-dim);
+}
+.tip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(10, 14, 26, 0.96);
+  border: 1px solid var(--border-strong);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.tip strong {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+.tip em {
+  color: var(--cyan);
+  font-style: normal;
+  margin-top: 2px;
+}

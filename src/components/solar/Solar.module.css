@@ -1,0 +1,15 @@
+.planetLabel {
+  font: 600 12px var(--font-sans);
+  color: rgba(232, 237, 247, 0.75);
+  white-space: nowrap;
+}
+.craftLabel {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font: 600 11px var(--font-sans);
+  white-space: nowrap;
+  color: #1a0d05;
+  background: #ffd66b;
+  box-shadow: 0 0 12px rgba(255, 178, 63, 0.6);
+}

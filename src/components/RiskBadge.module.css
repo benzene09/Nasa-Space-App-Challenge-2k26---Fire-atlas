@@ -1,0 +1,34 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid currentColor;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.value {
+  opacity: 0.8;
+  font-weight: 500;
+}
+.low {
+  color: var(--risk-low);
+}
+.moderate {
+  color: var(--risk-moderate);
+}
+.high {
+  color: var(--risk-high);
+}
+.critical {
+  color: var(--risk-critical);
+}

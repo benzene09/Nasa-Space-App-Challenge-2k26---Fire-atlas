@@ -1,0 +1,264 @@
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: var(--space-5);
+}
+.setup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.step {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.step strong {
+  color: var(--flame-2);
+}
+.step .mono {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+.pickers,
+.predict {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.laneTag {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #0b1020;
+  background: var(--lane, #fff);
+  flex-shrink: 0;
+}
+.pickLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pickLabel select {
+  flex: 1;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-solid);
+}
+.predictBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  background: var(--surface-solid);
+  font-weight: 600;
+  text-align: left;
+  transition: all 0.18s var(--ease-out);
+}
+.predictBtn:hover:not(:disabled) {
+  border-color: var(--lane);
+  transform: translateX(3px);
+}
+.predictOn {
+  border-color: var(--lane);
+  background: color-mix(in srgb, var(--lane) 16%, var(--surface-solid));
+}
+.predictBtn:disabled,
+.go:disabled {
+  cursor: not-allowed;
+}
+.go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  border-radius: 14px;
+  border: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1a0d05;
+  background: linear-gradient(135deg, var(--flame-2), var(--flame));
+  box-shadow: 0 10px 30px -10px rgba(255, 106, 43, 0.8);
+  transition:
+    transform 0.15s,
+    opacity 0.2s;
+}
+.go:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+.go:disabled {
+  opacity: 0.4;
+}
+.wins {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.wins .mono {
+  color: var(--flame-2);
+}
+
+.stage {
+  position: relative;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  background: #060913;
+}
+.loading {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+.hud {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(6, 9, 19, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+.hudLane {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+}
+.hudLane .laneTag {
+  width: 22px;
+  height: 22px;
+}
+.hudName {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.track {
+  flex: 1;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+.track span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--lane), #ff6a2b);
+}
+.hudVal {
+  width: 44px;
+  text-align: right;
+  font-size: 0.78rem;
+}
+.clock {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+.count {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 6rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 40px rgba(255, 106, 43, 0.9);
+  pointer-events: none;
+}
+.result {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  translate: -50% 0;
+  width: min(440px, calc(100% - 24px));
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(10, 14, 26, 0.92);
+  border: 1px solid rgba(255, 178, 63, 0.4);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+.result > svg {
+  color: var(--flame-2);
+}
+.result h4 {
+  font-size: 1.15rem;
+  margin-top: 4px;
+}
+.result p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.result p svg {
+  vertical-align: -2px;
+  color: var(--risk-low);
+}
+.resultBtns {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.resultBtns button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  font-weight: 600;
+}
+.resultBtns .primary {
+  border: 0;
+  color: #1a0d05;
+  background: linear-gradient(135deg, var(--flame-2), var(--flame));
+}
+:global(.race-lane-tag) {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: #fff;
+  color: #0b1020;
+  font: 700 13px var(--font-sans);
+}
+@media (max-width: 960px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+  .stage {
+    height: 360px;
+  }
+  .hudName {
+    width: 90px;
+  }
+}

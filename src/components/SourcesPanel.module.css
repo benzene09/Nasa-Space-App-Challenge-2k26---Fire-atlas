@@ -1,0 +1,88 @@
+.count {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+}
+.count .mono {
+  color: var(--flame-2);
+  font-weight: 600;
+}
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--space-3);
+}
+.slot {
+  perspective: 900px;
+  min-height: 150px;
+}
+.flip {
+  position: relative;
+  height: 100%;
+  min-height: 150px;
+  transform-style: preserve-3d;
+}
+.face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-4);
+  border-radius: 14px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.front {
+  color: var(--text);
+  text-decoration: none;
+  background: linear-gradient(160deg, rgba(63, 212, 255, 0.12), transparent 60%), var(--surface-solid);
+  border: 1px solid rgba(63, 212, 255, 0.35);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.front:hover {
+  box-shadow: 0 10px 30px -12px rgba(63, 212, 255, 0.5);
+}
+.back {
+  transform: rotateY(180deg);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-dim);
+  background: repeating-linear-gradient(135deg, var(--surface-solid) 0 10px, #0f1526 10px 20px);
+  border: 1px dashed var(--border-strong);
+}
+.id {
+  font-size: 0.74rem;
+  color: var(--cyan);
+}
+.back .id {
+  color: var(--text-muted);
+}
+.name {
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-right: 18px;
+}
+.use {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+.hint {
+  font-size: 0.76rem;
+  max-width: 24ch;
+}
+.ext {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  color: var(--text-dim);
+}

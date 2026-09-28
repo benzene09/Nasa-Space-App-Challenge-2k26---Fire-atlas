@@ -1,0 +1,63 @@
+.card {
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  transition:
+    border-color 0.2s var(--ease-out),
+    transform 0.2s var(--ease-out);
+}
+.card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+.top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+}
+.label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.value {
+  margin-top: var(--space-3);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.unit {
+  margin-left: 4px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.hint {
+  margin-top: 2px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+.cyan .icon {
+  color: var(--cyan);
+  background: var(--cyan-soft);
+}
+.flame .icon {
+  color: var(--flame-2);
+  background: var(--flame-soft);
+}
+.violet .icon {
+  color: var(--violet);
+  background: var(--violet-soft);
+}
+
+.long {
+  font-size: 1.15rem;
+}

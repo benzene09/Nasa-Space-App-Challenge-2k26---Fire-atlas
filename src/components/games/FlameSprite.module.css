@@ -1,0 +1,21 @@
+.svg {
+  display: block;
+  overflow: visible;
+}
+.flicker {
+  transform-origin: 50px 100px;
+  animation: flicker 0.18s ease-in-out infinite alternate;
+}
+@keyframes flicker {
+  from {
+    transform: scale(1, 1) skewX(0deg);
+  }
+  to {
+    transform: scale(0.97, 1.04) skewX(1.5deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flicker {
+    animation: none;
+  }
+}

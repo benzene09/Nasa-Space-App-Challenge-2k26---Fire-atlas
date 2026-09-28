@@ -1,0 +1,29 @@
+.tip {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(10, 14, 26, 0.96);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow);
+  font-size: 0.8rem;
+  min-width: 140px;
+}
+.label {
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  margin-bottom: 4px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.row strong {
+  margin-left: auto;
+  font-weight: 500;
+}
+.swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}

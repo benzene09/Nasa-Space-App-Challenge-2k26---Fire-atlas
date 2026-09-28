@@ -1,0 +1,103 @@
+.card {
+  width: min(380px, 100%);
+  padding: var(--space-4);
+  border-radius: 18px;
+  background: rgba(8, 12, 22, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.9);
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #1a0d05;
+  background: linear-gradient(135deg, var(--flame-2), var(--flame));
+}
+.title {
+  margin-top: var(--space-3);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.text {
+  margin-top: 6px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #c9d2e6;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  color: var(--text);
+}
+.icon:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.dots {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  justify-content: center;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 99px;
+  border: 0;
+  background: var(--surface-3);
+  transition:
+    width 0.25s var(--ease-out),
+    background 0.2s;
+  position: relative;
+}
+.dot::before {
+  content: '';
+  position: absolute;
+  inset: -12px -4px;
+}
+.dotDone {
+  background: rgba(255, 178, 63, 0.5);
+}
+.dotOn {
+  width: 26px;
+  background: var(--flame-2);
+}
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 700;
+  color: #1a0d05;
+  background: linear-gradient(135deg, var(--flame-2), var(--flame));
+}
+.primary:hover {
+  filter: brightness(1.08);
+}

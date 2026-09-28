@@ -1,0 +1,48 @@
+.wrap {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 14px;
+  background: var(--surface-solid);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s var(--ease-out);
+}
+.option > svg,
+.option > .label {
+  position: relative;
+  z-index: 1;
+}
+.option:hover {
+  color: var(--text);
+}
+.selected {
+  color: #1a0d05;
+}
+.pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--flame-2), var(--flame));
+  box-shadow: 0 8px 24px -8px rgba(255, 106, 43, 0.6);
+}

@@ -1,0 +1,68 @@
+.anchor {
+  pointer-events: none;
+  user-select: none;
+}
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #fff;
+  background: rgba(8, 12, 22, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.8);
+}
+.label i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.fuel {
+  color: #ffe29a;
+  border-color: rgba(255, 226, 154, 0.5);
+}
+.oxygen {
+  color: #7fe3ff;
+  border-color: rgba(63, 212, 255, 0.5);
+}
+.heat {
+  color: #ffb070;
+  border-color: rgba(255, 106, 43, 0.6);
+}
+.neutral {
+  color: #e8edf7;
+}
+.red {
+  color: #fff;
+  background: rgba(225, 29, 72, 0.9);
+  border-color: #ff8fa3;
+  animation: pop 0.6s ease-in-out infinite alternate;
+}
+.hot {
+  color: #1a0d05;
+  background: linear-gradient(90deg, #ffd000, #ff6a2b);
+  border-color: #ffe7a0;
+}
+@keyframes pop {
+  to {
+    transform: scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .red {
+    animation: none;
+  }
+}
+@media (max-width: 560px) {
+  .label {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+}
